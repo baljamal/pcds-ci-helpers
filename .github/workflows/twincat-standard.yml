@@ -54,6 +54,9 @@ jobs:
   docs:
     name: "Documentation"
     uses: ./.github/workflows/python-docs.yml
+    permissions:
+        id-token: write  # Allow the job to generate an OIDC token
+        contents: read
     with:
       deploy: ${{ github.repository_owner == inputs.docs-organization && (github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags')) }}
       package-name: ""
