@@ -28,7 +28,7 @@ jobs:
     runs-on: [self-hosted, Windows] 
     steps:
       - name: pre-commit
-        uses: baljamal/pcds-ci-helpers/.github/workflows/pre-commit.yml@master
+        uses: ./.github/workflows/pre-commit.yml
         with:
           args: "--all-files"
   
