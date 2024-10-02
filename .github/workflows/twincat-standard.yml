@@ -27,6 +27,8 @@ jobs:
       pages: write
     runs-on: [self-hosted, Windows] 
     steps:
+      - name: checkout-repository
+        uses: actions/checkout@v3 # Ensures the repository is checked out before using local actions
       - name: pre-commit
         uses: ./.github/workflows/pre-commit.yml
         with:
