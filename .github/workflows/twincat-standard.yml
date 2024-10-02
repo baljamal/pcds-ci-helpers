@@ -30,6 +30,7 @@ jobs:
       - name: pre-commit
         uses: ./.github/workflows/pre-commit.yml
         with:
+          project-root: ${{ inputs.project-root }}
           args: "--all-files"
   
       - name: summary
